@@ -1,11 +1,70 @@
-<!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Концепты лендингов</title>
-<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:60px auto;padding:0 20px;color:#161a17;background:#faf8f4}
-h1{letter-spacing:-.03em}a{color:#2f5233}li{margin:12px 0;font-size:18px}small{color:#5b625c}</style></head>
-<body><h1>Концепты лендингов</h1>
-<p><small>Демонстрационные макеты. Не клиентские заказы.</small></p>
-<ul>
-<li><a href="lotos/">Студия маникюра — концепт</a></li>
-<li><a href="garage55/">Автосервис — концепт</a></li>
-</ul></body></html>
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Концепты лендингов — Ярослав</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f2ea;color:#161a17;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{width:min(1180px,92vw);margin:0 auto;padding:56px 0 72px}
+h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em;margin:0 0 10px;font-weight:800}
+p.lead{color:#5b625c;margin:0 0 38px;font-size:17px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e7e2d8;border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .15s ease,border-color .15s ease}
+.card:hover{transform:translateY(-3px);border-color:#c9c2b1}
+.shot{aspect-ratio:16/10;overflow:hidden;background:#efe9dd}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.meta{padding:14px 16px 16px;display:flex;flex-direction:column;gap:3px}
+.meta b{font-size:16px;letter-spacing:-.01em}
+.meta span{font-size:13px;color:#5b625c}
+footer{margin-top:44px;color:#5b625c;font-size:13px;border-top:1px solid #e7e2d8;padding-top:18px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>Концепты лендингов</h1>
+<p class="lead">Демонстрационные макеты и вёрстка. Не клиентские заказы: бизнесы вымышленные или взяты как пример, цены и отзывы не настоящие. Показываю подход к структуре, типографике и адаптиву.</p>
+<div class="grid">
+<a class="card" href="lotos/">
+  <div class="shot"><img src="assets/shots/lotos.png" alt="Студия «Лотос»" loading="lazy"></div>
+  <div class="meta"><b>Студия «Лотос»</b><span>Салон красоты — полный лендинг</span></div>
+</a>
+<a class="card" href="garage55/">
+  <div class="shot"><img src="assets/shots/garage55.png" alt="Гараж 55" loading="lazy"></div>
+  <div class="meta"><b>Гараж 55</b><span>Автосервис — полный лендинг</span></div>
+</a>
+<a class="card" href="firstscreen/rayz/">
+  <div class="shot"><img src="assets/shots/rayz.png" alt="Райз" loading="lazy"></div>
+  <div class="meta"><b>Райз</b><span>Ногтевая студия — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/district/">
+  <div class="shot"><img src="assets/shots/district.png" alt="Дистрикт" loading="lazy"></div>
+  <div class="meta"><b>Дистрикт</b><span>Бар — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/tut-mnut/">
+  <div class="shot"><img src="assets/shots/tut-mnut.png" alt="Тут Мнут" loading="lazy"></div>
+  <div class="meta"><b>Тут Мнут</b><span>Массаж — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/albatros/">
+  <div class="shot"><img src="assets/shots/albatros.png" alt="Альбатрос" loading="lazy"></div>
+  <div class="meta"><b>Альбатрос</b><span>Автошкола — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/feedback/">
+  <div class="shot"><img src="assets/shots/feedback.png" alt="Feedback" loading="lazy"></div>
+  <div class="meta"><b>Feedback</b><span>Массаж — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/apk/">
+  <div class="shot"><img src="assets/shots/apk.png" alt="АПК Право" loading="lazy"></div>
+  <div class="meta"><b>АПК Право</b><span>Юруслуги — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/drive016/">
+  <div class="shot"><img src="assets/shots/drive016.png" alt="Драйв 016" loading="lazy"></div>
+  <div class="meta"><b>Драйв 016</b><span>Автошкола — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/vektor/">
+  <div class="shot"><img src="assets/shots/vektor.png" alt="Вектор" loading="lazy"></div>
+  <div class="meta"><b>Вектор</b><span>Автошкола — первый экран</span></div>
+</a>
+<a class="card" href="firstscreen/avangard/">
+  <div class="shot"><img src="assets/shots/avangard.png" alt="КГ Авангард" loading="lazy"></div>
+  <div class="meta"><b>КГ Авангард</b><span>Лицензии и допуски — первый экран</span></div>
+</a>
+</div>
+<footer>Ярослав · лендинги · dotagency.ru</footer>
+</div></body></html>
