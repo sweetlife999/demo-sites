@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Стоматология 24 — концепт полной страницы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#12211f;--muted:#5b6b68;--line:#e6e1d8;--accent:#0f766e;--accent2:#0b5f59;--bg:#faf7f2;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Golos Text",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;background:rgba(250,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+  .logo{font-weight:700;letter-spacing:.01em}
+  .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+  .nav a{color:var(--muted);text-decoration:none}
+  .nav a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600;border:0;cursor:pointer}
+  .btn:hover{background:var(--accent2);color:#fff}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 56px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.06;letter-spacing:-.02em;margin:0 0 18px}
+  .lead{font-size:17px;color:var(--muted);max-width:46ch;margin:0 0 26px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .facts{display:flex;gap:28px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+  .facts b{display:block;font-size:20px}
+  .facts span{font-size:13px;color:var(--muted)}
+  .art{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 50px rgba(18,33,31,.06)}
+  .art-inner{aspect-ratio:4/3;border-radius:14px;background:radial-gradient(circle at 50% 45%,#e6f2f0,#f7fbfa 60%);display:grid;place-items:center;color:var(--accent);font-weight:700;font-size:26px;letter-spacing:.02em}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;margin:0 0 10px}
+  .sub{color:var(--muted);margin:0 0 32px;max-width:60ch}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  .price{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .price:last-child{border-bottom:0}
+  .price b{font-size:18px;color:var(--accent)}
+  .steps{counter-reset:s;display:grid;gap:12px}
+  .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+  .step:before{counter-increment:s;content:counter(s);flex:0 0 28px;height:28px;border-radius:50%;background:#e6f2f0;color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:14px}
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  form{display:grid;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+  input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+  textarea{min-height:96px;resize:vertical}
+  .note{font-size:12px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media (max-width:900px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.nav ul{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="logo">Стоматология 24</div>
+  <ul><li><a href="#services">Услуги</a></li><li><a href="#prices">Цены</a></li><li><a href="#how">Как проходит</a></li><li><a href="#contacts">Контакты</a></li></ul>
+  <a class="btn" href="#contacts" style="color:#fff">Записаться</a>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="kicker">Стоматология · Москва, юг · 24/7</div>
+      <h1>Стоматология, которая работает, когда болит</h1>
+      <p class="lead">Круглосуточный приём, КТ на месте, запись за минуту. Это концепт полной страницы — как мог бы выглядеть ваш сайт после запуска.</p>
+      <div class="hero-cta"><a class="btn" href="#contacts">Записаться на приём</a><a class="btn ghost" href="tel:+70000000000">Позвонить</a></div>
+      <div class="facts"><div><b>24/7</b><span>приём</span></div><div><b>КТ</b><span>на месте</span></div><div><b>15 мин</b><span>до метро</span></div></div>
+    </div>
+    <div class="art"><div class="art-inner">КТ на месте</div></div>
+  </div>
+
+  <section id="services">
+    <h2>Помогаем, когда больно</h2>
+    <p class="sub">Не нужно ждать утра и искать дежурную клинику — приезжайте, врач примет в любое время.</p>
+    <div class="grid3">
+      <div class="card"><h3>Острая боль</h3><p>Снимем боль в день обращения, поставим временную пломбу и объясним, что делать дальше.</p></div>
+      <div class="card"><h3>Лечение и протезирование</h3><p>План лечения с фиксированной сметой: без «потом доплатите» и лишних процедур.</p></div>
+      <div class="card"><h3>Компьютерная томография</h3><p>3D-снимок на месте за 5 минут — врачу не нужно отправлять вас в другую клинику.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Как проходит визит</h2>
+    <p class="sub">Четыре шага — от звонка до плана лечения.</p>
+    <div class="steps">
+      <div class="step">Звонок или заявка — подбираем время, даже ночью.</div>
+      <div class="step">Осмотр и КТ — врач показывает, что происходит, на снимке.</div>
+      <div class="step">План и смета — фиксируем стоимость до начала лечения.</div>
+      <div class="step">Лечение — по плану, с напоминанием о следующем визите.</div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <h2>Цены</h2>
+    <p class="sub">Пример прайса для концепта: конкретные цифры появятся после согласования с клиникой.</p>
+    <div class="card">
+      <div class="price"><span>Первичный осмотр и консультация</span><b>0 ₽</b></div>
+      <div class="price"><span>Компьютерная томография (3D)</span><b>от 1 500 ₽</b></div>
+      <div class="price"><span>Лечение кариеса, один зуб</span><b>от 4 900 ₽</b></div>
+      <div class="price"><span>Удаление зуба</span><b>от 3 500 ₽</b></div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Записаться</h2>
+    <p class="sub">Оставьте номер — перезвоним в течение 10 минут. Форма в концепте не отправляет заявки, это макет.</p>
+    <div class="contact">
+      <div class="card">
+        <h3>Адрес</h3>
+        <p>Москва, юг — точный адрес в концепте не указан.</p>
+        <h3 style="margin-top:18px">Часы</h3>
+        <p>Круглосуточно, без выходных.</p>
+        <h3 style="margin-top:18px">Телефон</h3>
+        <p>+7 (000) 000-00-00 — заглушка.</p>
+      </div>
+      <form>
+        <input type="text" placeholder="Как вас зовут">
+        <input type="tel" placeholder="Телефон">
+        <textarea placeholder="Что беспокоит (необязательно)"></textarea>
+        <button class="btn" type="button">Записаться</button>
+        <span class="note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</span>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span>Концепт «Стоматология 24» — демонстрационный макет, не клиентский проект.</span><span>© 2026</span></footer>
+</body>
+</html>
