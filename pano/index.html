@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>360-тур — прототип навигации</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<style>
+  :root{--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--bg:#f8fafc}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Golos Text",-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+  .logo{font-weight:700;letter-spacing:.02em}
+  nav{display:flex;gap:18px;flex-wrap:wrap}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px}
+  nav a:hover{color:var(--ink)}
+  main{display:grid;grid-template-columns:280px 1fr;gap:0;min-height:calc(100vh - 61px)}
+  aside{border-right:1px solid var(--line);background:#fff;padding:20px}
+  aside h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 12px}
+  .loc{display:block;width:100%;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:8px;cursor:pointer;font:inherit;color:inherit}
+  .loc:hover{border-color:#cbd5e1}
+  .loc.is-active{border-color:var(--accent);background:#eff6ff;color:var(--accent);font-weight:600}
+  #viewer{width:100%;height:100%;min-height:520px}
+  section.tour{display:grid;grid-template-rows:auto 1fr;min-height:520px}
+  .tour-head{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .tour-head small{color:var(--muted)}
+  .hint{font-size:13px;color:var(--muted);padding:10px 20px;border-top:1px solid var(--line);background:#fff}
+  @media (max-width:900px){
+    main{grid-template-columns:1fr}
+    aside{border-right:0;border-bottom:1px solid var(--line)}
+    #viewer{min-height:420px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">КЛИНИКА · 360</div>
+  <nav>
+    <a href="#sec-tour">Тур</a>
+    <a href="#sec-locations">Локации</a>
+    <a href="#sec-contacts">Контакты</a>
+  </nav>
+</header>
+<main>
+  <aside id="sec-locations">
+    <h2>Локации</h2>
+    <button class="loc is-active" data-scene="room1">Приёмное отделение</button>
+    <button class="loc" data-scene="room2">Кабинет КТ</button>
+    <button class="loc" data-scene="room1" data-pitch="-5" data-yaw="140">Операционная</button>
+  </aside>
+  <section class="tour" id="sec-tour">
+    <div class="tour-head">
+      <div><strong>Виртуальный тур</strong><br><small>Крутите мышью или пальцем, переходите по меткам</small></div>
+      <small>2 панорамы · прототип</small>
+    </div>
+    <div id="viewer"></div>
+    <div class="hint">Прототип: показывает механику — hotspots между помещениями, меню локаций, переход по якорю.</div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script>
+const viewer = pannellum.viewer('viewer', {
+  default: { firstScene: 'room1', sceneFadeDuration: 700, autoLoad: true, compass: false },
+  scenes: {
+    room1: {
+      title: 'Приёмное отделение',
+      type: 'equirectangular',
+      panorama: 'room1.jpg',
+      hfov: 110,
+      hotSpots: [{
+        pitch: -4, yaw: 25, type: 'scene', text: 'В кабинет КТ', sceneId: 'room2'
+      }]
+    },
+    room2: {
+      title: 'Кабинет КТ',
+      type: 'equirectangular',
+      panorama: 'room2.jpg',
+      hfov: 110,
+      hotSpots: [{
+        pitch: -6, yaw: -140, type: 'scene', text: 'Назад в приёмное', sceneId: 'room1'
+      }]
+    }
+  }
+});
+const btns = [...document.querySelectorAll('.loc')];
+function activate(name){ btns.forEach(b => b.classList.toggle('is-active', b.dataset.scene === name)); }
+viewer.on('scenechange', () => { const s = viewer.getScene(); activate(s); });
+btns.forEach(b => b.addEventListener('click', () => {
+  viewer.loadScene(b.dataset.scene);
+  if (b.dataset.pitch) viewer.setPitch(parseFloat(b.dataset.pitch));
+  if (b.dataset.yaw) viewer.setYaw(parseFloat(b.dataset.yaw));
+}));
+</script>
+</body>
+</html>
