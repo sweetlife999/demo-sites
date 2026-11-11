@@ -1,0 +1,263 @@
+:root {
+  --paper: #f7f2e9;
+  --paper-deep: #efe7da;
+  --ink: #211a15;
+  --muted: #7b6d5f;
+  --accent: #9a4c31;
+  --green: #24302a;
+  --line: rgba(33, 26, 21, 0.14);
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --sans: "Manrope", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+::selection { background: rgba(154, 76, 49, 0.18); }
+
+.progress {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: var(--accent); z-index: 50;
+}
+
+/* ---------- topbar ---------- */
+.topbar {
+  max-width: 1240px; margin: 0 auto; padding: 26px 32px 0;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+}
+.brand {
+  font-family: var(--sans); font-weight: 700; font-size: 15px;
+  letter-spacing: 0.02em; text-decoration: none;
+}
+.topbar-note {
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- hero ---------- */
+.hero { max-width: 1240px; margin: 0 auto; padding: 74px 32px 40px; }
+.kicker {
+  margin: 0 0 22px; font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+}
+.hero h1 {
+  margin: 0; font-size: clamp(38px, 5.6vw, 74px); line-height: 1.04;
+  font-weight: 600; letter-spacing: -0.022em; max-width: 1020px;
+  text-wrap: balance;
+}
+.dek {
+  margin: 26px 0 0; max-width: 640px; color: var(--muted);
+  font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55;
+}
+.byline {
+  margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--muted);
+}
+.byline span:first-child { color: var(--ink); font-weight: 600; }
+.byline .dot { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: .55; }
+
+/* ---------- cover ---------- */
+.cover { max-width: 1240px; margin: 14px auto 0; padding: 0 32px; }
+.cover img {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 24%;
+  border-radius: 3px;
+}
+.cover figcaption {
+  margin-top: 12px; font-family: var(--sans); font-size: 12px; color: var(--muted);
+}
+
+/* ---------- layout ---------- */
+.wrap {
+  max-width: 1240px; margin: 0 auto; padding: 72px 32px 96px;
+  display: grid; grid-template-columns: 236px minmax(0, 760px); gap: 72px;
+  align-items: start;
+}
+.toc-col { position: sticky; top: 36px; }
+.toc-title {
+  margin: 0 0 14px; font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+}
+.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+.toc li { margin: 0; }
+.toc a {
+  display: flex; gap: 12px; padding: 8px 0 8px 16px; margin-left: -1px;
+  font-family: var(--sans); font-size: 13px; line-height: 1.4; text-decoration: none;
+  color: var(--muted); border-left: 1px solid transparent; transition: color .2s, border-color .2s;
+}
+.toc a span {
+  flex: 0 0 auto; font-size: 10px; font-weight: 700; letter-spacing: .06em;
+  color: var(--accent); padding-top: 2px;
+}
+.toc a:hover { color: var(--ink); }
+.toc a.active { color: var(--ink); border-left-color: var(--accent); }
+
+/* ---------- article ---------- */
+.article { max-width: 760px; }
+.article p { margin: 0 0 1.35em; }
+.lead { font-size: 22px; line-height: 1.62; }
+.lead::first-letter {
+  float: left; font-size: 74px; line-height: .82; padding: 6px 10px 0 0; color: var(--accent);
+  font-weight: 600;
+}
+
+.quote {
+  margin: 2.2em 0; padding: 30px 0 26px 34px; border-left: 2px solid var(--accent);
+}
+.quote p {
+  margin: 0 0 14px; font-size: clamp(21px, 2.2vw, 27px); line-height: 1.45;
+  font-style: italic; letter-spacing: -0.01em;
+}
+.quote cite {
+  font-family: var(--sans); font-style: normal; font-size: 12px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+
+.section { margin-top: 64px; scroll-margin-top: 32px; }
+.section-head { margin-bottom: 26px; }
+.section-num {
+  display: block; font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; color: var(--accent); margin-bottom: 8px;
+}
+.section h2 {
+  margin: 0; font-size: clamp(28px, 3vw, 38px); line-height: 1.15;
+  font-weight: 600; letter-spacing: -0.018em; text-wrap: balance;
+}
+.section h3 {
+  margin: 2em 0 .5em; font-size: 21px; line-height: 1.35; font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.section h3 + p { margin-top: .35em; }
+
+.inline-figure { margin: 2em 0; }
+.inline-figure img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; }
+.inline-figure figcaption {
+  margin-top: 10px; font-family: var(--sans); font-size: 12px; color: var(--muted);
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  margin: 2.4em 0 .4em; padding: 34px 36px; background: var(--green); color: #f3ece1;
+  border-radius: 4px;
+}
+.cta p { margin: 0 0 22px; font-size: 18px; line-height: 1.6; color: rgba(243, 236, 225, .9); }
+.btn {
+  display: inline-block; padding: 13px 22px; background: var(--accent); color: #fff;
+  font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; text-decoration: none; border-radius: 2px;
+  transition: background .2s;
+}
+.btn:hover { background: #7f3d27; }
+
+/* ---------- FAQ ---------- */
+.faq { border-top: 1px solid var(--line); }
+.faq:last-of-type { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 24px; padding: 20px 0;
+  font-size: 18px; font-weight: 600; line-height: 1.4;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary i {
+  flex: 0 0 auto; width: 14px; height: 14px; margin-top: 7px; position: relative;
+}
+.faq summary i::before, .faq summary i::after {
+  content: ""; position: absolute; background: var(--accent); transition: transform .2s;
+}
+.faq summary i::before { left: 0; top: 6px; width: 14px; height: 1.5px; }
+.faq summary i::after { left: 6.25px; top: 0; width: 1.5px; height: 14px; }
+.faq[open] summary i::after { transform: scaleY(0); }
+.faq-body { padding: 0 40px 22px 0; color: #40362d; }
+.faq-body p { margin: 0; }
+
+/* ---------- author ---------- */
+.author-card {
+  margin-top: 72px; padding-top: 34px; border-top: 1px solid var(--line);
+  display: flex; gap: 22px; align-items: flex-start;
+}
+.author-card img {
+  width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
+  flex: 0 0 auto;
+}
+.author-line { margin: 0 0 10px; font-style: italic; color: var(--muted); }
+.author-name { margin: 0; font-family: var(--sans); font-weight: 700; font-size: 15px; }
+.author-role { margin: 2px 0 6px; font-family: var(--sans); font-size: 13px; color: var(--muted); }
+.author-site { font-family: var(--sans); font-size: 13px; color: var(--accent); }
+
+/* ---------- footer ---------- */
+.footer { border-top: 1px solid var(--line); background: var(--paper-deep); }
+.footer-inner {
+  max-width: 1240px; margin: 0 auto; padding: 44px 32px 56px;
+  display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap;
+}
+.footer-title {
+  margin: 0 0 12px; font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+}
+.related { margin: 0; padding: 0 0 0 18px; max-width: 640px; }
+.related li { margin-bottom: 6px; font-size: 16px; line-height: 1.45; }
+.footer-note { font-family: var(--sans); font-size: 11px; color: var(--muted); align-self: flex-end; }
+
+/* ---------- mobile toc ---------- */
+.toc-mobile { display: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1080px) {
+  .wrap { grid-template-columns: 1fr; padding-top: 48px; gap: 0; }
+  .toc-col { display: none; }
+  .toc-mobile {
+    display: block; margin: 0 0 44px; padding: 16px 20px;
+    border: 1px solid var(--line); border-radius: 3px; background: rgba(255,255,255,.35);
+  }
+  .toc-mobile summary {
+    cursor: pointer; font-family: var(--sans); font-size: 12px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+  }
+  .toc-mobile ol { margin: 16px 0 4px; padding-left: 20px; }
+  .toc-mobile li { margin-bottom: 8px; font-family: var(--sans); font-size: 14px; }
+  .toc-mobile a { text-decoration: none; color: var(--ink); }
+}
+
+@media (max-width: 720px) {
+  body { font-size: 17.5px; }
+  .topbar { padding: 20px 20px 0; }
+  .topbar-note { display: none; }
+  .hero { padding: 46px 20px 28px; }
+  .hero h1 { font-size: clamp(34px, 9vw, 44px); }
+  .dek { font-size: 17px; margin-top: 18px; }
+  .byline { font-size: 12px; gap: 8px; }
+  .cover { padding: 0 20px; }
+  .cover img { aspect-ratio: 4 / 5; object-position: 50% 20%; }
+  .wrap { padding: 40px 20px 64px; }
+  .lead { font-size: 19px; }
+  .lead::first-letter { font-size: 58px; }
+  .quote { padding-left: 22px; margin: 1.8em 0; }
+  .section { margin-top: 48px; }
+  .section h2 { font-size: 27px; }
+  .cta { padding: 26px 24px; }
+  .faq summary { font-size: 16.5px; }
+  .footer-inner { padding: 34px 20px 44px; }
+}
+
+/* ---------- numbered list ---------- */
+.num-list { margin: 0 0 1.35em; padding-left: 1.35em; }
+.num-list li { padding-left: .35em; margin-bottom: .5em; }
+.num-list li::marker { color: var(--accent); font-family: var(--sans); font-weight: 600; font-size: .82em; }
+
+/* ---------- mobile toc toggle ---------- */
+.toc-mobile summary { list-style: none; display: flex; align-items: center; justify-content: space-between; }
+.toc-mobile summary::-webkit-details-marker { display: none; }
+.toc-mobile summary::after {
+  content: "+"; font-size: 18px; color: var(--accent); line-height: 1;
+}
+.toc-mobile[open] summary::after { content: "–"; }
